@@ -6,6 +6,8 @@ import certifi
 from pathlib import Path
 from datetime import timedelta
 
+from dotenv import load_dotenv
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = '***REMOVED***'
@@ -191,7 +193,8 @@ LOGGING = {
 }
 
 #Google
-# settings.py
+load_dotenv()
+
 GOOGLE_OAUTH_CLIENT_ID = os.environ.get('GOOGLE_OAUTH_CLIENT_ID')
 GOOGLE_OAUTH_CLIENT_SECRET = os.environ.get('GOOGLE_OAUTH_CLIENT_SECRET')
 
