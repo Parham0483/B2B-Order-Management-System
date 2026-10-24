@@ -39,3 +39,14 @@ __pycache__/
 /migrations/
 gtc-market-key.jsongtc-market-key.json
 *.json
+
+# Virtualenv / dependencies
+venv/
+.venv/
+node_modules/
+
+# Local data and uploads containing real business data
+db.sqlite3
+media/invoices/
+media/payment_receipts/
+media/shipments/

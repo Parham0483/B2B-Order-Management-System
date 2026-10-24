@@ -4,7 +4,7 @@ services:
     environment:
       POSTGRES_DB: ${DB_NAME:-salesDb}
       POSTGRES_USER: ${DB_USER:-salesuser}
-      POSTGRES_PASSWORD: ${DB_PASSWORD:-***REMOVED***}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in .env}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -30,7 +30,7 @@ services:
       - DATABASE_HOST=db
       - DATABASE_NAME=${DB_NAME:-salesDb}
       - DATABASE_USER=${DB_USER:-salesuser}
-      - DATABASE_PASSWORD=${DB_PASSWORD:-***REMOVED***}
+      - DATABASE_PASSWORD=${DB_PASSWORD:?Set DB_PASSWORD in .env}
       - DEBUG=${DEBUG:-0}
       - USE_HTTPS=True
       - DJANGO_HANDLES_SSL=False

@@ -7,9 +7,11 @@ from datetime import timedelta
 from decouple import config
 from dotenv import load_dotenv
 
+load_dotenv()
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = '***REMOVED***'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 DEBUG = True
 
@@ -244,7 +246,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = 'sale@gtc.market'
-EMAIL_HOST_PASSWORD = '***REMOVED***'  # Keep as fallback
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')  # Keep as fallback
 DEFAULT_FROM_EMAIL = 'sale@gtc.market'
 
 # OAuth2 Email settings
